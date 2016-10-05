@@ -42,7 +42,7 @@ object GenMathOps{
   var outputColName: String = null
   var outputColType: String = null
   var methodOp = "numerical_mapper"
-  /*
+  
     def setDataFrame(arg_df: DataFrame): Unit = {
       origDF = arg_df
     }
@@ -119,7 +119,7 @@ object GenMathOps{
         java.lang.System.exit(-1)
       }
     }
-    */
+    
   def getMean(set:Double*): Double ={
     var sum:Double = 0.0
     val setLen:Long = set.length

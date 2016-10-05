@@ -1,14 +1,14 @@
 /**
   *
 Created by mbrown on 4/20/16.
-Copyright (c) 2016, NETWORK DEFENSE PROGRAM
+Copyright (c) 2016,  3rd Planet Softworks Inc
 All rights reserved.
 
 Redistribution and use, with or without modification, are permitted provided that the following conditions are met:
 
 1. Redistributions of this data must retain the above copyright notice, this list of conditions and the following disclaimer.
 
-2. Redistributions requires prior consent NETWORK DEFENSE PROGRAM.
+2. Redistributions requires prior consent  3rd Planet Softworks Inc.
 
 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
@@ -111,10 +111,8 @@ object DriverAll {
     println("Avg of a column : " +  GenMathOps.colAvg(dlusterDFA,"col0"))
     val clusterDFPow: DataFrame = GenMathOps.powModCol(clusterDF,"col0","col0Pow",5)
     clusterDFPow.show()
-    //def logModCol(input_dataframe: DataFrame,input_column_name:String,output_col_name:String,output_col_type:String,input_col_pos:Int,base:Double)
     val clusterDFLow: DataFrame = GenMathOps.logModCol(clusterDF: DataFrame,"col0","col0Log",10)
     clusterDFLow.show()
-    //  def normalizeModCol(input_dataframe: DataFrame,input_column_name:String,output_col_name:String,output_col_type:String,input_col_pos:Int,mean:Double,sd:Double,mod_op:String,parameters:Map[String,Any]): DataFrame = {
     val stddev: Double = GenMathOps.getStdDev(numArray)
     val mean: Double = GenMathOps.getMean(numArray)
     val clusterDFNorm = GenMathOps.normalizeModCol(clusterDF, "col0","col0Norm",mean,stddev)
@@ -129,12 +127,6 @@ object DriverAll {
       (201 to 300,3000) ,
       (201 to 1000,5000))
     val protocolDF = null
-    //NumericRecoder.setSparkContext(sparkContext)
-    // NumericRecoder.setSqlContext(sqlContext)
-    // NumericRecoder.setSparkContext(sparkContext)
-    // NumericRecoder.setSqlContext(sqlContext)
-    // NumericRecoder.setNumericRangeMap(useMapListBuff2)
-    // NumericRecoder.setMapList(useMapListBuff2)
     val protoDF = GeneralColOps.addCol(clusterDFNorm,"col_prtcl","integer")
     protoDF.show()
     val count = protoDF.count()
@@ -152,10 +144,6 @@ object DriverAll {
     val protoRDD3 = protoRDD2.map(row => setRowAt5(row))
     val protoDF2 = sqlContext.applySchema(protoRDD3,protoSchema)
     protoDF2.show()
-    //recode(input_dataframe: DataFrame,input_column_name:String,output_col_name:String,output_col_type:String,input_col_pos:Int)
-    //val recodedDF =  NumericRecoder.recode(protoDF2,"col_prtcl","col_prtcl_recode","integer",5)
-    // recodedDF.show()
-
     //********************END  RUN GENERALMATHOPS ********************
     //******************** RUN REDCODE NUMERIC CLUSTER ********************
 

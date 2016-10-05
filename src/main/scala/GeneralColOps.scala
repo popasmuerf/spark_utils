@@ -48,43 +48,6 @@ object GeneralColOps
   var outputColType: String = null
   var methodOp = "numerical_mapper"
 
-
-  /*
-    def setDataFrame(arg_df: DataFrame): Unit = {
-      origDF = arg_df
-    }
-    def setDataFrame(arg_context: SparkContext): Unit = {
-      sparkContext = arg_context
-    }
-    def setInColName(arg_name: String): Unit = {
-      inputColname = arg_name
-    }
-    def setOutColName(arg_name: String): Unit = {
-      outputColName = arg_name
-    }
-    def setOutColType(arg_type: String): Unit = {
-      outputColType = arg_type
-    }
-    def setSparkContext(arg_context: SparkContext): Unit = {
-      sparkContext = arg_context
-    }
-    def setSparkContext(): Unit ={
-     // var mathOps = new GenMathOps()
-      //var colOps = new GeneralColOps()
-      val sparkMaster = "local"
-      val sparkAppname = "Stand alone Scala Spark app"
-      val sparkConf:SparkConf = new SparkConf()
-      sparkConf.setAppName(sparkAppname)
-      sparkConf.setMaster(sparkMaster)
-      val sparkContext = new SparkContext(sparkConf)
-    }
-    def setSqlContext(arg_context: SQLContext): Unit = {
-      sqlContext = arg_context
-    }
-    def setSqlContext(): Unit ={
-      val sqlContext:SQLContext = new SQLContext(sparkContext)
-    }
-    */
   def modRDD(row:Row,row_posistion:Int = 0,method_call:String,parameters:Map[String,Any]):Row={
     val rowSeq: Seq[Any] = row.toSeq
     var rowListBuffer: ListBuffer[Any] = rowSeq.to[scala.collection.mutable.ListBuffer]
@@ -224,7 +187,7 @@ object GeneralColOps
     return freshestDF
   }
   def combineDF(input_dataframe: DataFrame, column_name:String, column_type:String):DataFrame ={
-    //firgure out how to do this later...if possible
+    //......
     return null
   }
   def addCol(input_dataframe: DataFrame, column_name:String, column_type:String): DataFrame = {
